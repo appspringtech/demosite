@@ -1,0 +1,42 @@
+@import '../../style/_main';
+
+$side-menu-size: 10%;
+
+.home-component {
+  .side-menu {
+    display: inline-block;
+    background-color: $menu-background;
+    position: absolute;
+    top: $nav-height;
+    bottom: 0;
+    left: 0;
+    right: 100% - $side-menu-size;
+
+    ul {
+      li {
+        a {
+          font-size: 14px;
+          color: $menu-color;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          padding: 5px 0;
+
+          &:hover {
+            background-color: $menu-background-hover;
+            color: $menu-color-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .main-content {
+    display: inline-block;
+    position: absolute;
+    top: $nav-height;
+    bottom: 0;
+    left: $side-menu-size;
+    right: 0;
+  }
+}

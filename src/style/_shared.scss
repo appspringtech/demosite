@@ -1,0 +1,47 @@
+.hidden {
+  height: 0;
+  opacity: 0;
+}
+
+.button {
+  border-radius: $border-radius;
+  border: none;
+  height: 30px;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: all 300ms linear;
+  width: 100%;
+
+  &.default {
+    color: $white-base;
+    background-color: $primary-color;
+
+    &:hover {
+      opacity: $button-opacity-on-hover;
+      transition: all 300ms linear;
+    }
+  }
+}
+
+input[type='text'],
+input[type='password'] {
+  height: 30px;
+  padding: 0 5px;
+  border-radius: $border-radius;
+  border: $border-color 1px solid;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.block-center {
+  margin: 0 auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}

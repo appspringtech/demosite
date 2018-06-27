@@ -1,0 +1,35 @@
+$elements-padding: 50px;
+
+.login-component {
+  padding: 50px 0 0;
+
+  .login-box {
+    border: 1px #c0c0c0 solid;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 3px;
+
+    .title {
+      padding: 15px 0;
+    }
+
+    .org-box {
+      padding: 0 $elements-padding;
+    }
+
+    .username-box {
+      padding: 15px $elements-padding 0;
+    }
+
+    .submit-org-box,
+    .password-box {
+      padding: 15px $elements-padding;
+    }
+
+    .submit-credentials-box {
+      padding: 0 $elements-padding 15px;
+    }
+
+  }
+}

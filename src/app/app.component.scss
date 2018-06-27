@@ -1,0 +1,14 @@
+@import '../style/_main';
+
+.app-container {
+  nav {
+    background-color: $nav-background;
+    padding: 5px 10px;
+    height: $nav-height;
+    @include justify-content(flex-end);
+
+    a {
+      color: $nav-color;
+    }
+  }
+}

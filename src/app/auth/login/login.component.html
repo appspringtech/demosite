@@ -1,0 +1,32 @@
+<div class="login-component">
+  <div class="login-box">
+    <h1 class="title text-center">App Login</h1>
+    <div class="organization">
+      <form (submit)="submitOrganization()">
+        <div class="grid grid-center">
+          <div class="column-full org-box">
+            <input [(ngModel)]="organization" type="text" name="organization" placeholder="Organization" [disabled]="hasValidOrganization">
+          </div>
+          <div *ngIf="!hasValidOrganization" class="column-full submit-org-box">
+            <input type="submit" class="button default" value="Submit Organization">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="credentials" [class.hidden]="!hasValidOrganization">
+      <form (submit)="submitCredentials()">
+        <div class="grid">
+          <div class="column-full username-box">
+            <input [(ngModel)]="username" type="text" name="username" placeholder="Username">
+          </div>
+          <div class="column-full password-box">
+            <input [(ngModel)]="password" type="password" name="password" placeholder="Password">
+          </div>
+          <div class="column-full submit-credentials-box">
+            <input type="submit" class="button default" value="Submit Credential">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="home-component">
+  <div class="side-menu">
+    <ul>
+      <li *ngFor="let menuItem of menuItems">
+        <a [routerLink]="['/dashboard/app', { outlets: {dashboard_page:[menuItem.url]} }]">{{menuItem.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <router-outlet name="dashboard_page"></router-outlet>
+  </div>
+</div>

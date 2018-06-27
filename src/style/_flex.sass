@@ -1,0 +1,80 @@
+// =================================================
+// =       Flexbox SASS mixins with prefixes       =
+// =================================================
+
+// Helper for flex properties
+// Values: <flex-property>  || <property-value>
+=flex-property($type, $value)
+	-webkit-#{$type}: $value
+	-moz-#{$type}: $value
+	-ms-#{$type}: $value
+	#{$type}: $value
+
+// Flex display
+// Values: flex | inline-flex
+=flex-display($display: flex)
+	display: -webkit-#{$display}
+	display: -moz-#{$display}
+	display: -ms-#{$display}box
+	display: -ms-#{$display}
+	display: $display
+
+// Flex direction
+// Values: row | row-reverse | column | column-reverse
+=flex-direction($direction: row)
+	+flex-property(flex-direction, $direction)
+
+// Flex wrap
+// Values: nowrap | wrap | wrap-reverse
+=flex-wrap($wrap: nowrap)
+	+flex-property(flex-wrap, $wrap)
+
+// Flex flow - Shortcut of flex direction and flex wrap
+// Values: <flex-direction> || <flex-wrap>
+=flex-flow($flow)
+	+flex-property(flex-flow, $flow)
+
+// Justify content
+// Values: flex-start | flex-end | center | space-between | space-around
+=justify-content($justify: center)
+	+flex-property(justify-content, $justify)
+
+// Align items
+// Values: flex-start | flex-end | center | baseline | stretch
+=align-items($align: center)
+	+flex-property(align-items, $align)
+
+// Flex grow
+// Value: <number>
+=flex-grow($grow: 0)
+	+flex-property(flex-grow, $grow)
+
+// Flex
+// Values: <positive-number> | initial | auto | none
+=flex($columns)
+	+flex-property(flex, $columns)
+
+// Flex order
+// Value: <integer>
+=flex-order($order: 0)
+	+flex-property(order, $order)
+
+// Flex shrink
+// Value: <number>
+=flex-shrink($shrink: 1)
+	+flex-property(flex-shrink, $shrink)
+
+// Flex basis
+// Value: <width>
+=flex-basis($width: auto)
+	+flex-property(flex-basis, $width)
+
+// Align content
+// Values: flex-start | flex-end | center | space-between | space-around | stretch
+=align-content($align)
+	+flex-property(align-content, $align)
+
+// Align self
+// Values: auto | flex-start | flex-end | center | baseline | stretch
+=align-self($align)
+	+flex-property(align-self, $align)
