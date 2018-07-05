@@ -1,0 +1,43 @@
+<div class="graphs-container">
+
+  <h3 class="title">TOP COUNTRIES WITH THE HIGHEST NUMBER OF INTERNET USERS</h3>
+
+  <table class="countries-table">
+    <tr>
+      <th>#</th>
+      <th>Country</th>
+      <th>Population</th>
+      <th>Internet Users</th>
+    </tr>
+    <tr *ngFor="let iu of countries, let i = index">
+      <td>{{i+1}}</td>
+      <td>{{iu.country}}</td>
+      <td>{{iu.population}}</td>
+      <td>{{iu.internetUsers}}</td>
+    </tr>
+  </table>
+
+  <google-chart [data]="pieChartData"></google-chart>
+  <google-chart [data]="columnChartData"></google-chart>
+
+  <div class="new-country">
+    <p>Try adding a new county</p>
+    <form (submit)="addCountry()">
+      <div class="grid">
+        <div class="column-full">
+          <input [(ngModel)]="country" type="text" name="country" placeholder="County">
+        </div>
+        <div class="column-full">
+          <input [(ngModel)]="population" type="number" name="population" placeholder="Population">
+        </div>
+        <div class="column-full">
+          <input [(ngModel)]="internetUsers" type="number" name="internet_users" placeholder="Internet Users">
+        </div>
+        <div class="column-full">
+          <input class="button default" type="submit" value="Add">
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

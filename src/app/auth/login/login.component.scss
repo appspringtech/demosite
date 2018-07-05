@@ -11,13 +11,10 @@ $elements-padding: 50px;
     border-radius: 3px;
 
     .title {
-      padding: 15px 0;
+      padding: 15px 0 0;
     }
 
-    .org-box {
-      padding: 0 $elements-padding;
-    }
-
+    .org-box,
     .username-box {
       padding: 15px $elements-padding 0;
     }
@@ -29,6 +26,23 @@ $elements-padding: 50px;
 
     .submit-credentials-box {
       padding: 0 $elements-padding 15px;
+    }
+
+    .organization {
+      position: relative;
+    }
+
+    .credentials {
+      position: relative;
+    }
+
+    .error-message {
+      color: #FF3D00;
+      float: right;
+      font-size: 12px;
+      position: absolute;
+      right: 50px;
+      top: 0px;
     }
 
   }

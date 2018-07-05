@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../shared/services/auth/auth.service';
 
 class DashboardMenu {
   text: string;
@@ -20,12 +23,22 @@ export class DashboardComponent implements OnInit {
     {
       text: 'Technologies',
       url: 'technologies'
+    },
+    {
+      text: 'Graphs',
+      url: 'graphs'
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService) {
+  }
 
   ngOnInit() {
+  }
+
+  doLogout(): void {
+    this.authService.closeSession();
+    this.router.navigate(['/auth']);
   }
 
 }

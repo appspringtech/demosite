@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
+import { GraphsComponent } from './graphs/graphs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/app/(dashboard_page:home)', pathMatch: 'full' },
   { path: '', children: [
     { path: 'app', component: DashboardComponent, children: [
       { path: 'home', component: HomeComponent, outlet: 'dashboard_page' },
-      { path: 'technologies', component: TechnologiesComponent, outlet: 'dashboard_page' }
+      { path: 'technologies', component: TechnologiesComponent, outlet: 'dashboard_page' },
+      { path: 'graphs', component: GraphsComponent, outlet: 'dashboard_page' }
     ] }
   ] }
 ];
@@ -19,8 +23,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    Ng2GoogleChartsModule,
   ],
-  declarations: [HomeComponent, DashboardComponent, TechnologiesComponent]
+  declarations: [HomeComponent, DashboardComponent, TechnologiesComponent, GraphsComponent]
 })
 export class DashboardModule { }
