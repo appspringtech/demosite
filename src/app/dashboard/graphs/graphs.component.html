@@ -21,11 +21,11 @@
   <google-chart [data]="columnChartData"></google-chart>
 
   <div class="new-country">
-    <p>Try adding a new county</p>
+    <p>Try adding a new country</p>
     <form (submit)="addCountry()">
       <div class="grid">
         <div class="column-full">
-          <input [(ngModel)]="country" type="text" name="country" placeholder="County">
+          <input [(ngModel)]="country" type="text" name="country" placeholder="Country">
         </div>
         <div class="column-full">
           <input [(ngModel)]="population" type="number" name="population" placeholder="Population">
@@ -39,5 +39,13 @@
       </div>
     </form>
   </div>
+
+  <div class="energy-graph-container">
+    <google-chart [data]="columnGroupedChartData"></google-chart>
+    <google-chart [data]="columnStackedChartData"></google-chart>
+    <google-chart [data]="barChartData"></google-chart>
+    <google-chart [data]="areaChartData"></google-chart>
+  </div>
+
 
 </div>
