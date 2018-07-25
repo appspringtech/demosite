@@ -19,6 +19,11 @@ export class GraphsComponent implements OnInit {
   public columnStackedChartData: any;
   public barChartData: any;
   public areaChartData: any;
+  public geoChartData: any;
+  public lineChartData: any;
+  public lineChartData2: any;
+  public areaChartData2: any;
+  public areaChartData3: any;
 
   // Source https://www.internetworldstats.com/top20.htm
   public countries: InternetUsers[] = [
@@ -179,6 +184,172 @@ export class GraphsComponent implements OnInit {
         title: 'U.S. natural gas plant liquids production by fuel',
         vAxis: {
           title: 'million barrels per day'
+        }
+      }
+    };
+
+    this.geoChartData = {
+      chartType: 'GeoChart',
+      dataTable: [
+        ['State', 'Stats'],
+        ['US-AL', 5],
+        ['US-AK', 6],
+        ['US-AZ', 2],
+        ['US-AR', 3],
+        ['US-CA', 1],
+        ['US-CO', 2],
+        ['US-CT', 6],
+        ['US-DE', 6],
+        ['US-DC', 6],
+        ['US-FL', 5],
+        ['US-GA', 6],
+        ['US-HI', 6],
+        ['US-ID', 2],
+        ['US-IL', 6],
+        ['US-IN', 6],
+        ['US-IA', 3],
+        ['US-KS', 3],
+        ['US-KY', 6],
+        ['US-LA', 5],
+        ['US-ME', 6],
+        ['US-MT', 2],
+        ['US-NE', 3],
+        ['US-NV', 2],
+        ['US-NH', 6],
+        ['US-NJ', 6],
+        ['US-NM', 2],
+        ['US-NY', 6],
+        ['US-NC', 6],
+        ['US-ND', 2],
+        ['US-OH', 6],
+        ['US-OK', 3],
+        ['US-OR', 1],
+        ['US-MD', 6],
+        ['US-MA', 6],
+        ['US-MI', 6],
+        ['US-MN', 3],
+        ['US-MS', 5],
+        ['US-MO', 3],
+        ['US-PA', 6],
+        ['US-RI', 6],
+        ['US-SC', 6],
+        ['US-SD', 2],
+        ['US-TN', 6],
+        ['US-TX', 4],
+        ['US-UT', 2],
+        ['US-VT', 6],
+        ['US-VA', 6],
+        ['US-WA', 1],
+        ['US-WV', 6],
+        ['US-WI', 6],
+        ['US-WY', 2]
+      ],
+      options: {
+        title: 'Lower 48 onshore crude oil production by region',
+        height: 400,
+        region: 'US',
+        resolution: 'provinces',
+        colorAxis: {values: [1, 2, 3, 4, 5, 6], colors: ['red', 'orange', 'yellow', 'blue', 'lime', 'green']},
+        backgroundColor: '#81d4fa',
+        datalessRegionColor: '#f8bbd0',
+        defaultColor: '#f5f5f5',
+      }
+    };
+
+    this.lineChartData = {
+      chartType: 'LineChart',
+      dataTable: [
+        ['Year', 'Electric Power', 'Industrial', 'Transportation', 'Residential', 'Comercial'],
+        ['1990', 30, 21, 22, 7, 4],
+        ['2000', 38, 24, 25, 7, 4],
+        ['2010', 39, 19, 27, 6, 4],
+        ['2020', 38, 23, 28, 6, 4],
+        ['2030', 39, 26, 24, 6, 4],
+        ['2040', 41, 28, 23, 5, 4.8],
+        ['2050', 43, 30, 25, 5, 4.9]
+      ],
+      options: {
+        height: 400,
+        title: 'Energy consumption by sector',
+        vAxis: {
+          title: 'quadrillon British thermal units'
+        }
+      }
+    };
+
+    this.lineChartData2 = {
+      chartType: 'LineChart',
+      dataTable: [
+        [
+          'Year',
+          'Net imports',
+          'Low Oil and Gas Resource and Technology',
+          'Low Oil Price',
+          'High Economy Growth',
+          'Refrence',
+          'Low Economy Growth',
+          'High Oil Price',
+          'High Oil and Gas Resource and Technology',
+        ],
+        ['1990', 15, null, null, null, null, null, null, null],
+        ['2000', 25, null, null, null, null, null, null, null],
+        ['2010', 18, null, null, null, null, null, null, null],
+        ['2020', 10, 10, 10, 10, 10, 10, 10, 10],
+        ['2030', null, 4, 5, -6, -7, -9, -19, -18],
+        ['2040', null, 6, 6, -6, -8, -12, -21, -25],
+        ['2050', null, 10, 8, -2, -7, -11, -20, -30]
+      ],
+      options: {
+        height: 400,
+        title: 'Net energy trade',
+        vAxis: {
+          title: 'quadrillon British thermal units'
+        }
+      }
+    };
+
+    this.areaChartData2 = {
+      chartType: 'AreaChart',
+      dataTable: [
+        [
+          'Year',
+          'Liquefied natural gas (LNG)',
+          'Mexico (pipeline)',
+          'Canada (pipeline)',
+          'Canada (pipeline)',
+          'LNG'
+        ],
+        ['2000', 0.5, 0.3, 0, -3.3, -3.5],
+        ['2010', 1, 0.8, 0.5, -3.3, -3.5],
+        ['2020', 6, 3, 1, -2.8, -3],
+        ['2030', 9, 4, 1.5, -2.3, -2.5],
+        ['2040', 9.5, 4.5, 2, -1.8, -2],
+        ['2050', 9.8, 5, 2.5, -0.8, -1]
+      ],
+      options: {
+        height: 400,
+        title: 'Natural gas trade',
+        vAxis: {
+          title: 'trillion cubic feet'
+        }
+      }
+    };
+
+    this.areaChartData3 = {
+      chartType: 'AreaChart',
+      dataTable: [
+        ['Year', 'Other', 'Linear fluorescent', 'Incandescent / Halogen', 'LED', 'CFL'],
+        ['2010', 100, 95, 91, 41, 34],
+        ['2020', 100, 95, 91, 50, 30],
+        ['2030', 100, 95, 90, 80, 25],
+        ['2040', 100, 96, 91, 85, 20],
+        ['2050', 100, 97, 93, 90, 18]
+      ],
+      options: {
+        height: 400,
+        title: 'Residential lighting',
+        vAxis: {
+          title: 'percent of equipment stock'
         }
       }
     };
