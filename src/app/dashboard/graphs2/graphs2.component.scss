@@ -1,7 +1,7 @@
 $margin-color: #EEEEEE;
 $boder-width: 10px;
 
-.graphs-container {
+.graphs-two-container {
   padding: 30px;
 
   .title {
@@ -45,6 +45,13 @@ $boder-width: 10px;
     td {
       width: 50%;
       border: $boder-width solid $margin-color;
+
+      &.org-chart {
+
+        /deep/ .google-visualization-orgchart-table {
+          margin: 0 auto;
+        }
+      }
     }
   }
 

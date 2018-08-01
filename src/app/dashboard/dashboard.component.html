@@ -2,7 +2,17 @@
   <div class="side-menu">
     <ul class="top">
       <li *ngFor="let menuItem of menuItems">
-        <a [routerLink]="['/dashboard/app', { outlets: {dashboard_page:[menuItem.url]} }]" routerLinkActive="active">{{menuItem.text}}</a>
+        <ng-container *ngIf="menuItem.submenus == null || menuItem.submenus.length === 0; else submenu">
+          <a [routerLink]="['/dashboard/app', { outlets: {dashboard_page:[menuItem.url]} }]" routerLinkActive="active">{{menuItem.text}}</a>
+        </ng-container>
+        <ng-template #submenu>
+          <p>{{menuItem.text}}</p>
+          <ul class="submenu">
+            <li *ngFor="let submenu of menuItem.submenus">
+                <a [routerLink]="['/dashboard/app', { outlets: {dashboard_page:[submenu.url]} }]" routerLinkActive="active">{{submenu.text}}</a>
+            </li>
+          </ul>
+        </ng-template>
       </li>
     </ul>
     <ul class="bottom">

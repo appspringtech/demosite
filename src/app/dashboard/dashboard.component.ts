@@ -6,6 +6,7 @@ import { AuthService } from '../shared/services/auth/auth.service';
 class DashboardMenu {
   text: string;
   url: string;
+  submenus?: DashboardMenu[];
 }
 
 @Component({
@@ -26,7 +27,17 @@ export class DashboardComponent implements OnInit {
     },
     {
       text: 'Graphs',
-      url: 'graphs'
+      url: '',
+      submenus: [
+        {
+          text: 'Graphs 1',
+          url: 'graphs'
+        },
+        {
+          text: 'Graphs 2',
+          url: 'graphs2'
+        }
+      ]
     }
   ];
 

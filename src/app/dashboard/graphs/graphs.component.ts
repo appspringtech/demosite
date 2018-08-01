@@ -63,7 +63,7 @@ export class GraphsComponent implements OnInit {
 
   ngOnInit() {
     this.buildChartsData();
-    this.buildDataForEnergyCharts();
+    this.buildDataForCharts();
   }
 
   addCountry(): void {
@@ -104,7 +104,7 @@ export class GraphsComponent implements OnInit {
     this.columnChartData = columnChartData;
   }
 
-  private buildDataForEnergyCharts(): void {
+  private buildDataForCharts(): void {
     this.columnGroupedChartData = {
       chartType: 'ColumnChart',
       dataTable: [
